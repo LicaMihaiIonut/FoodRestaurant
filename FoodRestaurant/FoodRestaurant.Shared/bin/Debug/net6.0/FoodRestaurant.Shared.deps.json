@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FoodRestaurant.Shared/1.0.0": {
+        "runtime": {
+          "FoodRestaurant.Shared.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FoodRestaurant.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

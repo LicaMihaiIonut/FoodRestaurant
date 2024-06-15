@@ -1,0 +1,12 @@
+D:\Lica\FoodRestaurant\FoodRestaurant.Shared\bin\Debug\net6.0\FoodRestaurant.Shared.deps.json
+D:\Lica\FoodRestaurant\FoodRestaurant.Shared\bin\Debug\net6.0\FoodRestaurant.Shared.dll
+D:\Lica\FoodRestaurant\FoodRestaurant.Shared\bin\Debug\net6.0\FoodRestaurant.Shared.pdb
+D:\Lica\FoodRestaurant\FoodRestaurant.Shared\obj\Debug\net6.0\FoodRestaurant.Shared.csproj.AssemblyReference.cache
+D:\Lica\FoodRestaurant\FoodRestaurant.Shared\obj\Debug\net6.0\FoodRestaurant.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Lica\FoodRestaurant\FoodRestaurant.Shared\obj\Debug\net6.0\FoodRestaurant.Shared.AssemblyInfoInputs.cache
+D:\Lica\FoodRestaurant\FoodRestaurant.Shared\obj\Debug\net6.0\FoodRestaurant.Shared.AssemblyInfo.cs
+D:\Lica\FoodRestaurant\FoodRestaurant.Shared\obj\Debug\net6.0\FoodRestaurant.Shared.csproj.CoreCompileInputs.cache
+D:\Lica\FoodRestaurant\FoodRestaurant.Shared\obj\Debug\net6.0\FoodRestaurant.Shared.dll
+D:\Lica\FoodRestaurant\FoodRestaurant.Shared\obj\Debug\net6.0\refint\FoodRestaurant.Shared.dll
+D:\Lica\FoodRestaurant\FoodRestaurant.Shared\obj\Debug\net6.0\FoodRestaurant.Shared.pdb
+D:\Lica\FoodRestaurant\FoodRestaurant.Shared\obj\Debug\net6.0\ref\FoodRestaurant.Shared.dll

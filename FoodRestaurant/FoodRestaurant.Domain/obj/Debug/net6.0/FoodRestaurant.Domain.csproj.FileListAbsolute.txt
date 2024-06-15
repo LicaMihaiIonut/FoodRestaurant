@@ -1,0 +1,14 @@
+D:\Lica\FoodRestaurant\FoodRestaurant.Domain\bin\Debug\net6.0\FoodRestaurant.Domain.deps.json
+D:\Lica\FoodRestaurant\FoodRestaurant.Domain\bin\Debug\net6.0\FoodRestaurant.Domain.runtimeconfig.json
+D:\Lica\FoodRestaurant\FoodRestaurant.Domain\bin\Debug\net6.0\FoodRestaurant.Domain.dll
+D:\Lica\FoodRestaurant\FoodRestaurant.Domain\bin\Debug\net6.0\FoodRestaurant.Domain.pdb
+D:\Lica\FoodRestaurant\FoodRestaurant.Domain\obj\Debug\net6.0\FoodRestaurant.Domain.csproj.AssemblyReference.cache
+D:\Lica\FoodRestaurant\FoodRestaurant.Domain\obj\Debug\net6.0\FoodRestaurant.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Lica\FoodRestaurant\FoodRestaurant.Domain\obj\Debug\net6.0\FoodRestaurant.Domain.AssemblyInfoInputs.cache
+D:\Lica\FoodRestaurant\FoodRestaurant.Domain\obj\Debug\net6.0\FoodRestaurant.Domain.AssemblyInfo.cs
+D:\Lica\FoodRestaurant\FoodRestaurant.Domain\obj\Debug\net6.0\FoodRestaurant.Domain.csproj.CoreCompileInputs.cache
+D:\Lica\FoodRestaurant\FoodRestaurant.Domain\obj\Debug\net6.0\FoodRestaurant.Domain.dll
+D:\Lica\FoodRestaurant\FoodRestaurant.Domain\obj\Debug\net6.0\refint\FoodRestaurant.Domain.dll
+D:\Lica\FoodRestaurant\FoodRestaurant.Domain\obj\Debug\net6.0\FoodRestaurant.Domain.pdb
+D:\Lica\FoodRestaurant\FoodRestaurant.Domain\obj\Debug\net6.0\FoodRestaurant.Domain.genruntimeconfig.cache
+D:\Lica\FoodRestaurant\FoodRestaurant.Domain\obj\Debug\net6.0\ref\FoodRestaurant.Domain.dll

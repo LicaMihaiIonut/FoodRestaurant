@@ -1,0 +1,17 @@
+D:\Lica\FoodRestaurant\FoodRestaurant.Logic\bin\Debug\net6.0\FoodRestaurant.Logic.deps.json
+D:\Lica\FoodRestaurant\FoodRestaurant.Logic\bin\Debug\net6.0\FoodRestaurant.Logic.dll
+D:\Lica\FoodRestaurant\FoodRestaurant.Logic\bin\Debug\net6.0\FoodRestaurant.Logic.pdb
+D:\Lica\FoodRestaurant\FoodRestaurant.Logic\obj\Debug\net6.0\FoodRestaurant.Logic.csproj.AssemblyReference.cache
+D:\Lica\FoodRestaurant\FoodRestaurant.Logic\obj\Debug\net6.0\FoodRestaurant.Logic.GeneratedMSBuildEditorConfig.editorconfig
+D:\Lica\FoodRestaurant\FoodRestaurant.Logic\obj\Debug\net6.0\FoodRestaurant.Logic.AssemblyInfoInputs.cache
+D:\Lica\FoodRestaurant\FoodRestaurant.Logic\obj\Debug\net6.0\FoodRestaurant.Logic.AssemblyInfo.cs
+D:\Lica\FoodRestaurant\FoodRestaurant.Logic\obj\Debug\net6.0\FoodRestaurant.Logic.csproj.CoreCompileInputs.cache
+D:\Lica\FoodRestaurant\FoodRestaurant.Logic\obj\Debug\net6.0\FoodRestaurant.Logic.dll
+D:\Lica\FoodRestaurant\FoodRestaurant.Logic\obj\Debug\net6.0\refint\FoodRestaurant.Logic.dll
+D:\Lica\FoodRestaurant\FoodRestaurant.Logic\obj\Debug\net6.0\FoodRestaurant.Logic.pdb
+D:\Lica\FoodRestaurant\FoodRestaurant.Logic\obj\Debug\net6.0\ref\FoodRestaurant.Logic.dll
+D:\Lica\FoodRestaurant\FoodRestaurant.Logic\bin\Debug\net6.0\FoodRestaurant.Abstractions.dll
+D:\Lica\FoodRestaurant\FoodRestaurant.Logic\bin\Debug\net6.0\FoodRestaurant.Domain.dll
+D:\Lica\FoodRestaurant\FoodRestaurant.Logic\bin\Debug\net6.0\FoodRestaurant.Abstractions.pdb
+D:\Lica\FoodRestaurant\FoodRestaurant.Logic\bin\Debug\net6.0\FoodRestaurant.Domain.pdb
+D:\Lica\FoodRestaurant\FoodRestaurant.Logic\obj\Debug\net6.0\FoodRestaurant.Logic.csproj.CopyComplete
