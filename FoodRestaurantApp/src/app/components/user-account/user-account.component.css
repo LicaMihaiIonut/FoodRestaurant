@@ -1,0 +1,46 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  background-color: #673ab7;
+  color: white;
+  height: 100vh;
+}
+
+.menu-items div {
+  cursor: pointer;
+  width: 100%;
+  padding: 15px 20px 15px 30px;
+}
+
+.menu-items div:hover {
+  background-color: #9167e6;
+}
+
+.menu-items div i {
+  margin-right: 10px;
+}
+
+.menu-item-active {
+  background-color: #9167e6;
+}
+
+.menu-item-logout {
+  margin-top: auto;
+  cursor: pointer;
+  width: 100%;
+  padding: 15px 20px 15px 30px;
+}
+
+.menu-item-logout:hover {
+  background-color: #9167e6;
+}
+
+.menu-item-logout i {
+  margin-right: 10px;
+}
+
+.container {
+  width: 85%;
+  background-color: #f8f8f8;
+}

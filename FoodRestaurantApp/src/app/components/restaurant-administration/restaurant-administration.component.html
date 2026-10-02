@@ -1,0 +1,63 @@
+<div class="my-container">
+  <div class="menu">
+    <div class="header">
+      <div class="restaurant-title">{{ restaurantName }}</div>
+      <img
+        style="border-radius: 50%; width: 100px; height: 100px"
+        [src]="restaurantImage ?? 'assets/default-person-image.jpg'"
+      />
+    </div>
+    <div style="margin-bottom: auto">
+      <div
+        class="menu-item"
+        [class.menu-item-active]="isMenuItemActive('profile')"
+        (click)="setMenuItemActive('profile')"
+      >
+        Profile
+      </div>
+      <div
+        class="menu-item"
+        [class.menu-item-active]="isMenuItemActive('orders')"
+        (click)="setMenuItemActive('orders')"
+      >
+        Orders
+      </div>
+      <div
+        class="menu-item"
+        [class.menu-item-active]="isMenuItemActive('menu')"
+        (click)="setMenuItemActive('menu')"
+      >
+        <span>Menu</span>
+      </div>
+      <div
+        class="menu-item"
+        [class.menu-item-active]="isMenuItemActive('schedule')"
+        (click)="setMenuItemActive('schedule')"
+      >
+        Schedule
+      </div>
+      <div
+        class="menu-item"
+        [class.menu-item-active]="isMenuItemActive('dashboard')"
+        (click)="setMenuItemActive('dashboard')"
+      >
+        Dashboard
+      </div>
+    </div>
+    <div class="menu-item" (click)="logout()">Logout</div>
+  </div>
+
+  <div style="width: 85%">
+    <app-restaurant-profile
+      *ngIf="isMenuItemActive('profile')"
+    ></app-restaurant-profile>
+    <app-restaurant-menu *ngIf="isMenuItemActive('menu')"></app-restaurant-menu>
+    <app-schedule *ngIf="isMenuItemActive('schedule')"></app-schedule>
+    <app-restaurant-dashboard
+      *ngIf="isMenuItemActive('dashboard')"
+    ></app-restaurant-dashboard>
+    <app-restaurant-orders
+      *ngIf="isMenuItemActive('orders')"
+    ></app-restaurant-orders>
+  </div>
+</div>

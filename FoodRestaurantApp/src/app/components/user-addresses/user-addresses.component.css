@@ -1,0 +1,88 @@
+.container {
+  padding: 30px 25px;
+}
+
+.address-info {
+  width: 100%;
+  padding: 20px 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-sizing: border-box;
+  box-shadow: 2px 5px 10px #ccc;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 35px;
+  display: flex;
+}
+
+.address-info-message {
+  color: #4f5057;
+  font-weight: 600;
+  margin-right: auto;
+}
+
+.address-info-add-button {
+  font-size: 20px;
+  color: #673ab7;
+  cursor: pointer;
+}
+
+.address-info-add-button:hover {
+  color: #9167e6;
+}
+
+.address-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.address-class {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  display: flex;
+  border-radius: 10px;
+  background-color: #fff;
+  box-sizing: border-box;
+  box-shadow: 2px 5px 10px #ccc;
+}
+
+.address-information {
+  display: flex;
+  margin-right: auto;
+  align-items: center;
+}
+
+.address-number {
+  font-weight: 600;
+  color: #4f5057;
+}
+
+.address-owner {
+  font-weight: 600;
+  color: #4f5057;
+  margin-top: 10px;
+}
+
+.address-expiration {
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 10px;
+  color: #888992;
+}
+
+.address-icon {
+  margin-right: 1rem;
+  font-size: 2rem;
+}
+
+.address-delete {
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #673ab7;
+}
+
+.address-delete:hover {
+  color: #9167e6;
+}

@@ -1,0 +1,44 @@
+<div class="products-container">
+  <div class="operations">
+    <div style="margin-right: auto"></div>
+    <app-view-management
+      [nrOfRecords]="nrOfRecords"
+      (viewManagementChanged)="viewManagementChanged($event)"
+    ></app-view-management>
+  </div>
+
+  <div class="restaurant-menu-table">
+    <div class="menu-header">
+      <div style="width: 1%"></div>
+      <div style="width: 15%; text-align: center">Order</div>
+      <div style="width: 25%; text-align: center">User</div>
+      <div style="width: 15%; text-align: center">Total</div>
+      <div style="width: 15%; text-align: center">Placed on</div>
+      <div style="width: 15%; text-align: center">Status</div>
+    </div>
+    <div *ngFor="let order of orders">
+      <div style="width: 100%">
+        <span class="menu-data">
+          <div style="width: 1%">
+            <i
+              class="bi bi-info-circle-fill arrow"
+              (click)="openInfo(order)"
+            ></i>
+          </div>
+          <div style="width: 15%; text-align: center">{{ order.orderId }}</div>
+          <div style="width: 25%; text-align: center">{{ order.userName }}</div>
+          <div style="width: 15%; text-align: center">
+            {{ order.totalPrice }} LEI
+          </div>
+          <div style="width: 15%; text-align: center">
+            {{ getDate(order.createdOn) }}
+          </div>
+          <div style="text-align: center; width: 15%">
+            {{ getStatus(order) }}
+          </div>
+        </span>
+      </div>
+      <div class="line"></div>
+    </div>
+  </div>
+</div>

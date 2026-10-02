@@ -1,0 +1,55 @@
+.line {
+  border-bottom: 1px solid #deddd9;
+  margin-bottom: 20px;
+}
+
+.close-button {
+  margin-left: auto;
+  font-size: 20px;
+}
+
+.close-button:hover {
+  border-radius: 50%;
+  height: fit-content;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  width: inherit;
+}
+
+:host
+  ::ng-deep
+  .mat-slide-toggle.mat-checked:not(.mat-disabled)
+  .mat-slide-toggle-bar {
+  background-color: #673ab7;
+}
+
+:host
+  ::ng-deep
+  .mat-slide-toggle.mat-checked:not(.mat-disabled)
+  .mat-slide-toggle-thumb {
+  background-color: #673ab7;
+}
+
+.mat-dialog-content {
+  overflow: auto;
+}
+
+.mat-dialog-container {
+  height: initial;
+  overflow: initial;
+}
+
+.fill-star {
+  color: #9167e6;
+}
+
+.custom-star {
+  font-size: 1.4rem;
+  cursor: pointer;
+}

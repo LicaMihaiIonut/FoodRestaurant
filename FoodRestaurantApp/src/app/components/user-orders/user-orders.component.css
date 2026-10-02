@@ -1,0 +1,68 @@
+.container {
+  padding: 30px 25px;
+}
+
+.order-card {
+  width: 100%;
+  border-radius: 10px;
+  background-color: #fff;
+  box-sizing: border-box;
+  box-shadow: 2px 5px 10px #ccc;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.order-title {
+  color: #4f5057;
+  font-weight: 600;
+  margin-right: auto;
+  font-size: 1.3rem;
+  margin-right: 0.6rem;
+}
+
+.order-restaurant {
+  font-size: 14px;
+}
+
+.order-total {
+  color: #4f5057;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.order-toggle-arrow {
+  font-size: 1.3rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.order-toggle-arrow:hover {
+  color: #9167e6;
+}
+
+.order-content {
+  border-top: 1px solid black;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  display: flex;
+}
+
+.order-content-title {
+  color: #4f5057;
+}
+
+.order-content-title-value {
+  color: #4f5057;
+  font-weight: 600;
+}
+
+.add-review-now {
+  cursor: pointer;
+  color: #9167e6;
+  text-decoration: underline;
+}
+
+.fill-star {
+  color: #9167e6;
+}

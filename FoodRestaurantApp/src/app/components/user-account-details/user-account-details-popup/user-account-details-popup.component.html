@@ -1,0 +1,34 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="d-flex" mat-dialog-container>
+    <h2 mat-dialog-title>{{ getTitle() }}</h2>
+    <i class="bi bi-x close-button base-button" (click)="close()"></i>
+  </div>
+
+  <div class="line"></div>
+
+  <div mat-dialog-content>
+    <div class="form-content" *ngIf="data.isName">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="name" />
+        <mat-error *ngIf="form.controls['name'].hasError('required')"
+          >Name is a required field.</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="form-content" *ngIf="!data.isName">
+      <mat-form-field>
+        <mat-label>Phone</mat-label>
+        <input matInput type="tel" formControlName="phone" />
+        <mat-error *ngIf="form.controls['phone'].hasError('required')"
+          >Phone number is a required field.</mat-error
+        >
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <button type="submit" class="base-save-button" mat-button>Save</button>
+  </div>
+</form>

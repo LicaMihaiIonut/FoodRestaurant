@@ -1,0 +1,51 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="d-flex" mat-dialog-container>
+    <h2 mat-dialog-title>{{ getTitle() }}</h2>
+    <i class="bi bi-x close-button base-button" (click)="close()"></i>
+  </div>
+
+  <div class="line"></div>
+
+  <div mat-dialog-content>
+    <div class="form-content">
+      <mat-form-field>
+        <mat-label>City</mat-label>
+        <input matInput formControlName="city" />
+        <mat-error *ngIf="form.controls['city'].hasError('required')"
+          >City is a required field.</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="form-content">
+      <mat-form-field>
+        <mat-label>Street</mat-label>
+        <input matInput formControlName="street" />
+        <mat-error *ngIf="form.controls['street'].hasError('required')"
+          >Street is a required field.</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="form-content">
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="address" />
+        <mat-error *ngIf="form.controls['address'].hasError('required')"
+          >Address is a required field.</mat-error
+        >
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <button
+      type="submit"
+      [class.button-disabled]="isLoading"
+      class="base-save-button"
+      mat-button
+    >
+      Save
+    </button>
+  </div>
+</form>

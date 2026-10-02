@@ -1,0 +1,68 @@
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <div class="dashboard-header-title">Overview</div>
+    <div>
+      <span
+        class="dashboard-header-filter"
+        (click)="setFilter('Month')"
+        [class.dashboard-header-filter-active]="isFilterActive('Month')"
+        >Month</span
+      >
+      <span
+        class="dashboard-header-filter"
+        (click)="setFilter('Quarter')"
+        [class.dashboard-header-filter-active]="isFilterActive('Quarter')"
+        >Quarter</span
+      >
+      <span
+        class="dashboard-header-filter"
+        (click)="setFilter('Year')"
+        [class.dashboard-header-filter-active]="isFilterActive('Year')"
+        >Year</span
+      >
+    </div>
+  </div>
+
+  <div class="dashboard-card-container">
+    <app-restaurant-dashboard-card
+      [title]="'Revenue'"
+      [icon]="'bi bi-currency-exchange'"
+      [value]="orderDashboard.revenue"
+      [roundValue]="true"
+      [percentage]="orderDashboard.revenuePercentage"
+      [class]="'dashboard-card'"
+    ></app-restaurant-dashboard-card>
+
+    <app-restaurant-dashboard-card
+      [title]="'Orders'"
+      [icon]="'bi bi-cart-check-fill'"
+      [value]="orderDashboard.orderCount"
+      [percentage]="orderDashboard.orderCountPercentage"
+      [class]="'dashboard-card'"
+    ></app-restaurant-dashboard-card>
+
+    <app-restaurant-dashboard-card
+      [title]="'Average'"
+      [icon]="'bi bi-bar-chart-fill'"
+      [value]="orderDashboard.averageRevenue"
+      [roundValue]="true"
+      [percentage]="orderDashboard.averageRevenuePercentage"
+      [class]="'dashboard-card'"
+    ></app-restaurant-dashboard-card>
+
+    <app-restaurant-dashboard-card
+      [title]="'Reviews'"
+      [icon]="'bi bi-chat-dots-fill'"
+      [roundValue]="true"
+      [value]="orderDashboard.reviews"
+      [percentage]="orderDashboard.reviewsPercentage"
+      [class]="'dashboard-card'"
+    ></app-restaurant-dashboard-card>
+  </div>
+
+  <div
+    *ngIf="isLoaded"
+    [chart]="chart"
+    style="box-shadow: 2px 5px 10px #ccc; padding-top: 30px"
+  ></div>
+</div>

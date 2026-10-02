@@ -1,0 +1,55 @@
+<div class="calendar-container">
+  <div class="calendar-selector-container">
+    <div class="calendar-selector-placeholder"></div>
+    <div class="calendar-selector">
+      <i class="bi bi-arrow-left-circle-fill" (click)="goToPreviousMonth()"></i>
+      <span>{{ getMonthName() }} {{ currentYear }}</span>
+      <i class="bi bi-arrow-right-circle-fill" (click)="goToNextMonth()"></i>
+    </div>
+  </div>
+
+  <div class="calendar-header">
+    <div class="calendar-selector-placeholder"></div>
+    <div class="calendar-header-day" *ngFor="let day of dayNames">
+      {{ day }}
+    </div>
+  </div>
+
+  <div class="calendar-data">
+    <div
+      class="calendar-days"
+      *ngFor="let i of [].constructor(calendarRows); let row = index"
+    >
+      <div class="calendar-week">
+        <span class="mb-1">Week {{ getWeekNumber(row) }}</span>
+      </div>
+      <div class="d-flex">
+        <div
+          *ngFor="let j of [].constructor(7); let col = index"
+          class="calendar-day-cell"
+          [class.calendar-day-cell-disabled]="!isCurrentMonth(col, row)"
+          (click)="openSchedulePopup(col, row)"
+        >
+          <div class="calendar-day-cell-value">{{ getDateDay(col, row) }}</div>
+          <div
+            class="calendar-day-cell-program"
+            *ngIf="isCurrentMonth(col, row)"
+          >
+            <i
+              class="bi bi-wifi-off free-day-icon"
+              *ngIf="isFreeDay(col, row)"
+            ></i>
+            <i
+              *ngIf="!isFreeDay(col, row) && !hasSchedule(col, row)"
+              class="bi bi-exclamation-circle-fill"
+              style="color: red"
+            ></i>
+            <span *ngIf="!isFreeDay(col, row) && hasSchedule(col, row)">{{
+              getFormattedSchedule(col, row)
+            }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

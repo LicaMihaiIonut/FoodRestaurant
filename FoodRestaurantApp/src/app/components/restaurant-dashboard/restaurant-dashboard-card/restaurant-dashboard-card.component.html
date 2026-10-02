@@ -1,0 +1,28 @@
+<div class="dashboard-card">
+  <div class="d-flex">
+    <span class="me-auto">{{ title }}</span>
+    <span
+      [class.green]="percentage > 0"
+      [class.red]="percentage < 0"
+      [class.neutral]="!!!percentage"
+    >
+      <i
+        class="bi bi-arrow-up-circle-fill dashboard-card-icon"
+        [class.bi-arrow-up-circle-fill]="percentage >= 0"
+        [class.bi-arrow-down-circle-fill]="percentage < 0"
+      ></i>
+      <span>{{ percentage.toFixed(2) }} %</span>
+    </span>
+  </div>
+  <div class="dashboard-card-content">
+    <i class="me-2" [class]="icon"></i>
+    <span>{{ getValue() }}</span>
+  </div>
+
+  <div class="description">
+    <span>{{ getDescription() }}</span>
+    <span [class.red]="percentage < 0" [class.green]="percentage > 0">{{
+      getTranslatedDescription()
+    }}</span>
+  </div>
+</div>

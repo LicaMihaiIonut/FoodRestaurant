@@ -1,0 +1,95 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="d-flex">
+    <h2 mat-dialog-title>Order details</h2>
+    <i class="bi bi-x close-button base-button" (click)="close()"></i>
+  </div>
+
+  <div class="line"></div>
+
+  <div mat-dialog-content>
+    <div>
+      <div>
+        <mat-form-field>
+          <mat-label>Order status</mat-label>
+          <mat-select formControlName="status">
+            <mat-option
+              *ngFor="let status of statusses"
+              [value]="statusses.indexOf(status)"
+              >{{ status }}</mat-option
+            >
+          </mat-select>
+          <mat-error *ngIf="form.controls['status'].hasError('required')"
+            >Status is a required field.</mat-error
+          >
+        </mat-form-field>
+      </div>
+
+      <mat-form-field>
+        <mat-label>Estimated delivery time</mat-label>
+        <input
+          matInput
+          type="time"
+          style="pointer-events: none"
+          formControlName="deliveryTime"
+        />
+        <mat-error *ngIf="form.controls['deliveryTime'].hasError('required')"
+          >Estimated delivery time is a required field.</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div style="margin-top: 1rem">
+      <div
+        style="
+          border-bottom: 1px solid #4f5057;
+          margin: 0.6rem 0rem;
+          color: #4f5057;
+          font-weight: 600;
+          font-size: 1.1rem;
+        "
+      >
+        Delivery information
+      </div>
+      <div>
+        <div>
+          <span style="font-weight: bold">Address: </span>
+          <span>{{ data.address }}</span>
+        </div>
+
+        <div>
+          <span style="font-weight: bold">Phone: </span>
+          <span>{{ data.phone }}</span>
+        </div>
+      </div>
+
+      <div style="margin-top: 1.5rem">
+        <div
+          style="
+            border-bottom: 1px solid #4f5057;
+            margin: 0.6rem 0rem;
+            color: #4f5057;
+            font-weight: 600;
+            font-size: 1.1rem;
+          "
+        >
+          Products
+        </div>
+        <div *ngFor="let product of data.products">
+          <span>{{ product.name }}</span>
+          x{{ product.quantity }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <button
+      type="submit"
+      class="base-save-button"
+      [class.button-disabled]="isLoading"
+      mat-button
+    >
+      Save
+    </button>
+  </div>
+</form>

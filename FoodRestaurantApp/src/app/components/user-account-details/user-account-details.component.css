@@ -1,0 +1,56 @@
+.container {
+  padding: 30px 25px;
+}
+
+.card-info {
+  width: 100%;
+  padding: 20px 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-sizing: border-box;
+  box-shadow: 2px 5px 10px #ccc;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 35px;
+  color: #4f5057;
+  font-weight: 600;
+}
+
+.card-info-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.card-info-title {
+  font-weight: 600;
+  color: #4f5057;
+}
+
+.card-info-description {
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 3px;
+  color: #888992;
+}
+
+.card-info-value {
+  margin-top: 15px;
+}
+
+.card-info-invalid-value {
+  color: red;
+  margin-top: 15px;
+}
+
+.card-info-icon {
+  cursor: pointer;
+  padding: 5px;
+  background-color: #eeeef1;
+  border-radius: 50%;
+  font-size: 13px;
+}
+
+.card-info-icon:hover {
+  background-color: #673ab7;
+  color: white;
+}

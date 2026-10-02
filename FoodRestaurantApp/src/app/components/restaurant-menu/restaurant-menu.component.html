@@ -1,0 +1,21 @@
+<div class="my-container">
+  <div class="my-container-tabs">
+    <div
+      class="my-container-tab"
+      (click)="setTabActive('Categories')"
+      [class.tab-active]="isTabActive('Categories')"
+    >
+      Categories
+    </div>
+    <div
+      class="my-container-tab"
+      (click)="setTabActive('Products')"
+      [class.tab-active]="isTabActive('Products')"
+    >
+      Products
+    </div>
+  </div>
+
+  <app-products *ngIf="isTabActive('Products')"></app-products>
+  <app-categories *ngIf="isTabActive('Categories')"></app-categories>
+</div>

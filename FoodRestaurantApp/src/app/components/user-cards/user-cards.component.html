@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="card-info">
+    <div class="card-info-message">Here you add and manage your cards.</div>
+    <div class="card-info-add-button" (click)="onOpenPopup()">
+      <i class="bi bi-plus-circle-fill me-2"></i>
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div *ngFor="let card of cards" class="card-class">
+      <div style="display: flex; margin-right: auto">
+        <i class="bi bi-credit-card card-icon"></i>
+
+        <div>
+          <div class="card-number">
+            {{ card.cardNumber }}
+          </div>
+          <div class="card-expiration">
+            {{ getMonth(card.monthExpiration) }} / {{ card.yearExpiration }}
+          </div>
+          <div class="card-owner">{{ card.owner }}</div>
+        </div>
+      </div>
+
+      <div>
+        <i
+          class="bi bi-pencil-square card-delete me-2"
+          (click)="edit(card)"
+        ></i>
+        <i
+          class="bi bi-trash card-delete"
+          (click)="delete(card.userCardId)"
+        ></i>
+      </div>
+    </div>
+  </div>
+</div>

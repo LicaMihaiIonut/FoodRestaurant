@@ -1,0 +1,50 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="d-flex">
+    <h2 mat-dialog-title>Upload image</h2>
+    <i class="bi bi-x close-button base-button" (click)="close()"></i>
+  </div>
+
+  <div class="line"></div>
+
+  <div mat-dialog-content>
+    <div class="form-image">
+      <div class="mb-4">
+        <img
+          style="border-radius: 50%; width: 250px; height: 250px"
+          [src]="
+            form.controls['image'].value ?? 'assets/default-person-image.jpg'
+          "
+        />
+      </div>
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <button type="submit" class="base-save-button me-3" mat-button>Save</button>
+    <button
+      class="base-save-button me-3"
+      *ngIf="!hasImage()"
+      (click)="fileUpload.click()"
+      type="button"
+    >
+      Upload
+    </button>
+    <button
+      class="base-save-button me-3"
+      *ngIf="hasImage()"
+      (click)="removeImage()"
+      mat-button
+    >
+      Delete
+    </button>
+  </div>
+</form>
+
+<input
+  type="file"
+  [(ngModel)]="rawImage"
+  class="file-upload"
+  #fileUpload
+  hidden
+  (change)="selectFile($event)"
+/>

@@ -1,0 +1,121 @@
+<div class="container">
+  <div *ngFor="let order of orders" class="order-card">
+    <div style="display: flex; width: 100%">
+      <div style="margin-right: auto">
+        <div style="display: flex">
+          <i
+            class="bi bi-arrow-up-circle order-toggle-arrow"
+            *ngIf="order.toggled"
+            (click)="toggle(order, false)"
+          ></i>
+          <i
+            class="bi bi-arrow-down-circle order-toggle-arrow"
+            *ngIf="!order.toggled"
+            (click)="toggle(order, true)"
+          ></i>
+          <div>
+            <div
+              style="display: flex; align-items: center; margin-bottom: 10px"
+            >
+              <div class="order-title">Order {{ order.orderId }}</div>
+              <div style="color: #9167e6">({{ getStatus(order.status) }})</div>
+            </div>
+            <div class="order-restaurant">
+              {{ order.restaurantName }}
+              <span *ngIf="order.status !== 4 && order.deliveryTime"
+                >(Your order will be delivered at
+                {{ getCreatedOn(order.deliveryTime) }})</span
+              >
+            </div>
+
+            <!-- <i
+            *ngFor="let j of [].constructor(5); let col = index"
+            class="bi me-1"
+            [class.fill-star]="canFillStar(review.grade, col)"
+            [class.bi-star-fill]="canFillStar(review.grade, col)"
+            [class.bi-star]="!canFillStar(review.grade, col)"
+          ></i> -->
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="order-total">{{ order.totalPrice }} LEI</div>
+        <div>{{ getCreatedOn(order.createdOn) }}</div>
+      </div>
+    </div>
+
+    <div *ngIf="order.toggled" class="order-content">
+      <div style="display: flex; flex-direction: column; width: 50%">
+        <div style="margin-bottom: 1.6rem">
+          <div class="order-content-title">Address</div>
+          <div class="order-content-title-value">{{ order.address }}</div>
+        </div>
+        <div style="margin-bottom: 1.6rem">
+          <div class="order-content-title">Payment</div>
+          <div class="order-content-title-value">{{ order.card }}</div>
+        </div>
+        <div style="margin-bottom: 1.6rem">
+          <div class="order-content-title">Total</div>
+          <div class="order-content-title-value">
+            {{ order.totalPrice }} LEI
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.6rem" *ngIf="order.status > 3">
+          <div class="order-content-title">Review</div>
+          <div
+            class="order-content-title-value"
+            *ngIf="hasReview(order.review)"
+          >
+            <i
+              *ngFor="let j of [].constructor(5); let col = index"
+              class="bi me-1"
+              [class.bi-star-fill]="order.review.grade > col"
+              [class.fill-star]="order.review.grade > col"
+              [class.bi-star]="order.review.grade <= col"
+            ></i>
+            <div>{{ order.review.description }}</div>
+          </div>
+          <div
+            class="order-content-title-value add-review-now"
+            *ngIf="!hasReview(order.review)"
+            (click)="addReview(order.orderId)"
+          >
+            Add review now
+          </div>
+        </div>
+      </div>
+
+      <div style="width: 50%">
+        <div
+          *ngFor="let product of order.products"
+          style="display: flex; align-items: center; margin-bottom: 1rem"
+        >
+          <img
+            [src]="product.image"
+            style="
+              width: 70px;
+              height: 70px;
+              border-radius: 50%;
+              margin-right: 1.5rem;
+            "
+          />
+          <div>
+            <div>{{ product.name }}</div>
+            <div style="margin-top: 7px">
+              <span
+                style="
+                  background-color: #d9d8d4;
+                  padding: 4px 6px;
+                  border-radius: 50%;
+                "
+                >{{ product.quantity }}</span
+              >
+              x {{ product.price }} LEI
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

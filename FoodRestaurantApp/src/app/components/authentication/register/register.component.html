@@ -1,0 +1,76 @@
+<form [formGroup]="form" (ngSubmit)="register()">
+  <div class="register-container">
+    <div class="register-card">
+      <div class="register-card-header">
+        <div class="register-card-welcome">Welcome!</div>
+        <div class="register-card-go-to-link">
+          <div class="me-1">Already have an account?</div>
+          <span (click)="goToLogin()">Login here!</span>
+        </div>
+        <div
+          style="font-size: 18px; margin-top: 15px"
+          class="register-card-welcome"
+        >
+          <span> Become a restaurant now!</span>
+          <mat-slide-toggle
+            formControlName="isRestaurant"
+            class="ms-2"
+          ></mat-slide-toggle>
+        </div>
+      </div>
+
+      <div class="register-card-form-control">
+        <mat-form-field>
+          <label class="register-card-label">Your email address</label>
+          <input matInput class="register-card-input" formControlName="email" />
+          <mat-error *ngIf="form.controls['email'].hasError('required')"
+            >Email is a required field.</mat-error
+          >
+          <mat-error *ngIf="form.controls['email'].hasError('email')"
+            >Invalid email format.</mat-error
+          >
+        </mat-form-field>
+      </div>
+
+      <div class="register-card-form-control">
+        <mat-form-field>
+          <label class="register-card-label">Choose a secure password</label>
+          <input
+            matInput
+            class="register-card-input"
+            type="password"
+            formControlName="password"
+          />
+          <mat-error *ngIf="form.controls['password'].hasError('required')"
+            >Password is a required field.</mat-error
+          >
+        </mat-form-field>
+      </div>
+
+      <div class="register-card-form-control">
+        <mat-form-field>
+          <label class="register-card-label">Confirm your password</label>
+          <input
+            matInput
+            class="register-card-input"
+            type="password"
+            formControlName="confirmPassword"
+          />
+          <mat-error
+            *ngIf="form.controls['confirmPassword'].hasError('required')"
+            >Password is a required field.</mat-error
+          >
+        </mat-form-field>
+      </div>
+
+      <button
+        type="submit"
+        class="base-save-button register-button"
+        [class.button-disabled]="isLoading"
+        mat-button
+      >
+        Register
+      </button>
+    </div>
+  </div>
+</form>

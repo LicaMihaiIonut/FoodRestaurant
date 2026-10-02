@@ -1,0 +1,30 @@
+.line {
+  border-bottom: 1px solid #deddd9;
+  margin-bottom: 20px;
+}
+
+.close-button {
+  margin-left: auto;
+  font-size: 20px;
+}
+
+.close-button:hover {
+  border-radius: 50%;
+  height: fit-content;
+}
+
+.review-customer {
+  font-weight: 700;
+  font-family: PT Sans Pro;
+  margin-right: auto;
+}
+
+.review-description {
+  font-size: 14px;
+  font-weight: 400;
+  padding: 7px 15px;
+}
+
+.fill-star {
+  color: #9167e6;
+}

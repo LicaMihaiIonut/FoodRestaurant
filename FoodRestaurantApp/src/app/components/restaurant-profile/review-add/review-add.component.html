@@ -1,0 +1,46 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="d-flex" mat-dialog-container>
+    <h2 mat-dialog-title>Place review</h2>
+    <i class="bi bi-x close-button base-button" (click)="close()"></i>
+  </div>
+
+  <div class="line"></div>
+
+  <div mat-dialog-content>
+    <div style="margin-bottom: 1rem">
+      <i
+        *ngFor="let j of [].constructor(5); let col = index"
+        class="bi me-1 custom-star"
+        [class.bi-star]="selectedScore < col"
+        [class.fill-star]="selectedScore >= col"
+        [class.bi-star-fill]="selectedScore >= col"
+        (click)="selectScore(col)"
+      ></i>
+    </div>
+
+    <div class="form-content">
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput type="text" formControlName="description" />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div
+    style="color: red; margin: 1rem 0rem"
+    *ngIf="this.selectedScore === -1 && saveClicked"
+  >
+    Please select a review.
+  </div>
+
+  <div mat-dialog-actions>
+    <button
+      type="submit"
+      class="base-save-button"
+      [class.button-disabled]="isLoading"
+      mat-button
+    >
+      Save
+    </button>
+  </div>
+</form>

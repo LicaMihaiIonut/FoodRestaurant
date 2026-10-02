@@ -1,0 +1,39 @@
+.my-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  border: 1px solid #f5f5f0;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.profile-image {
+  width: 50%;
+  height: 50%;
+  margin-left: 7%;
+  border: 1px dashed #673ab7;
+  background-color: #e0daeb;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+  border-radius: 15px;
+}
+
+.profile-image:hover {
+  background-color: #d0c8e0;
+}
+
+.profile-image-icon {
+  font-size: 30px;
+  color: #673ab7;
+}
+
+.profile-image-browse-files {
+  color: #673ab7;
+}
+
+.mat-form-field {
+  width: 100%;
+}

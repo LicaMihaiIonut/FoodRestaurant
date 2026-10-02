@@ -1,0 +1,25 @@
+.close-button {
+  margin-left: auto;
+  font-size: 20px;
+}
+
+.close-button:hover {
+  border-radius: 50%;
+  height: fit-content;
+}
+
+.no-button {
+  background-color: white;
+  border: 1px solid #673ab7 !important;
+  color: #673ab7;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 4px 12px;
+  margin: 0px;
+}
+
+.no-button:hover {
+  color: white;
+  background-color: #673ab7;
+  border: 1px solid #673ab7 !important;
+}

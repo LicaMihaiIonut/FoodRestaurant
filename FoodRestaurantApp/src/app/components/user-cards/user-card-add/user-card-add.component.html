@@ -1,0 +1,77 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="d-flex" mat-dialog-container>
+    <h2 mat-dialog-title>{{ getTitle() }}</h2>
+    <i class="bi bi-x close-button base-button" (click)="close()"></i>
+  </div>
+
+  <div class="line"></div>
+
+  <div mat-dialog-content>
+    <div class="form-content">
+      <mat-form-field>
+        <mat-label>Card number</mat-label>
+        <input matInput type="number" formControlName="cardNumber" />
+        <mat-error *ngIf="form.controls['cardNumber'].hasError('required')"
+          >Card number is a required field.</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div style="display: flex !important">
+      <mat-form-field style="width: 45%; margin-right: 10%">
+        <mat-label>Expiration month</mat-label>
+        <mat-select formControlName="monthExpiration">
+          <mat-option *ngFor="let month of getMonths()" [value]="month">{{
+            month
+          }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.controls['monthExpiration'].hasError('required')"
+          >Expiration month is a required field.</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field style="width: 45%">
+        <mat-label>Expiration year</mat-label>
+        <mat-select formControlName="yearExpiration">
+          <mat-option *ngFor="let year of getYears()" [value]="year">{{
+            year
+          }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.controls['yearExpiration'].hasError('required')"
+          >Expiration year is a required field.</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="form-content">
+      <mat-form-field>
+        <mat-label>Card security code</mat-label>
+        <input matInput type="number" formControlName="securityCode" />
+        <mat-error *ngIf="form.controls['securityCode'].hasError('required')"
+          >Card security code is a required field.</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="form-content">
+      <mat-form-field>
+        <mat-label>Card owner</mat-label>
+        <input matInput formControlName="owner" />
+        <mat-error *ngIf="form.controls['owner'].hasError('required')"
+          >Card owner is a required field.</mat-error
+        >
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <button
+      type="submit"
+      [class.button-disabled]="isLoading"
+      class="base-save-button"
+      mat-button
+    >
+      Save
+    </button>
+  </div>
+</form>

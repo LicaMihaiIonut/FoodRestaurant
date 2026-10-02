@@ -1,0 +1,67 @@
+<div class="products-container">
+  <div class="operations">
+    <div class="me-auto d-flex">
+      <div class="operations-button" (click)="add()">
+        <i class="bi bi-plus-circle"></i>
+        <span>Add</span>
+      </div>
+      <div
+        class="operations-button"
+        [class.pagination-arrow-disabled]="!canRemove()"
+        [class.button-disabled]="!canRemove()"
+        (click)="remove()"
+      >
+        <i class="bi bi-trash"></i>
+        <span>Delete</span>
+      </div>
+    </div>
+
+    <app-view-management
+      [nrOfRecords]="nrOfRecords"
+      (viewManagementChanged)="viewManagementChanged($event)"
+    ></app-view-management>
+  </div>
+
+  <div class="restaurant-menu-table">
+    <div class="menu-header">
+      <input
+        type="checkbox"
+        class="multi-select-checkbox"
+        [(ngModel)]="selectAllCheckbox"
+        (click)="selectAll()"
+      />
+      <div style="margin-left: 3%">Product</div>
+      <div>Category</div>
+      <div>Price</div>
+      <div>Discount</div>
+      <div></div>
+    </div>
+    <div *ngFor="let restaurantMenu of restaurantMenus">
+      <div class="menu-data">
+        <input
+          type="checkbox"
+          class="multi-select-checkbox"
+          [(ngModel)]="restaurantMenu.isSelected"
+        />
+        <div style="margin-left: 3%">{{ restaurantMenu.name }}</div>
+        <div>{{ restaurantMenu.categoryName }}</div>
+        <div>{{ restaurantMenu.price }} LEI</div>
+        <div>{{ getDiscount(restaurantMenu.discount) }}</div>
+        <div style="display: flex">
+          <app-custom-button
+            [icon]="'bi bi-paperclip'"
+            [text]="'Upload'"
+            (click)="uploadImage(restaurantMenu)"
+          ></app-custom-button>
+
+          <app-custom-button
+            [icon]="'bi bi-pencil-square'"
+            [text]="'Edit'"
+            (click)="edit(restaurantMenu)"
+          ></app-custom-button>
+        </div>
+      </div>
+      <div class="line"></div>
+    </div>
+  </div>
+</div>

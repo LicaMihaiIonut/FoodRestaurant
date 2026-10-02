@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="card-info">Review your personal information of this account.</div>
+
+  <div class="card-info">
+    <div class="d-flex">
+      <div class="card-info-title me-auto">Your name.</div>
+      <i
+        class="bi bi-pencil-fill card-info-icon"
+        (click)="onOpenPopup(true)"
+      ></i>
+    </div>
+    <div class="card-info-description">
+      This is the name that it is used when an order is registered.
+    </div>
+    <div class="card-info-value" *ngIf="accountDetails?.name">
+      {{ accountDetails?.name }}
+    </div>
+    <div class="card-info-invalid-value" *ngIf="!accountDetails?.name">
+      Please fill in your name.
+    </div>
+  </div>
+
+  <div class="card-info card-info-disabled">
+    <div class="d-flex">
+      <div class="card-info-title me-auto">Your email address.</div>
+    </div>
+    <div class="card-info-description">
+      This is the email that it is used to login into your account.
+    </div>
+    <div class="card-info-value">{{ accountDetails?.email }}</div>
+  </div>
+
+  <div class="card-info">
+    <div class="d-flex">
+      <div class="card-info-title me-auto">Your phone number.</div>
+      <i
+        class="bi bi-pencil-fill card-info-icon"
+        (click)="onOpenPopup(false)"
+      ></i>
+    </div>
+    <div class="card-info-description">
+      This is the phone number that it is used to get in contact with you when a
+      order is delivered.
+    </div>
+    <div class="card-info-value" *ngIf="accountDetails?.phone">
+      {{ accountDetails?.phone }}
+    </div>
+    <div class="card-info-invalid-value" *ngIf="!accountDetails?.phone">
+      Please fill in your phone number.
+    </div>
+  </div>
+</div>

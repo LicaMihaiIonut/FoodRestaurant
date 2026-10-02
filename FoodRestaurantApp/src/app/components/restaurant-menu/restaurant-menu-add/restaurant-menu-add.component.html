@@ -1,0 +1,64 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="d-flex">
+    <h2 mat-dialog-title>Add product</h2>
+    <i class="bi bi-x close-button base-button" (click)="close()"></i>
+  </div>
+
+  <div class="line"></div>
+
+  <div mat-dialog-content>
+    <div>
+      <mat-form-field>
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="categoryId">
+          <mat-option
+            *ngFor="let category of categories"
+            [value]="category.categoryId"
+            >{{ category.name }}</mat-option
+          >
+        </mat-select>
+        <mat-error *ngIf="form.controls['categoryId'].hasError('required')"
+          >Category is a required field.</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="name" />
+        <mat-error *ngIf="form.controls['name'].hasError('required')"
+          >Name is a required field.</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <mat-label>Price</mat-label>
+        <input matInput type="number" formControlName="price" />
+        <mat-error *ngIf="form.controls['price'].hasError('required')"
+          >Price is a required field.</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <mat-label>Discount</mat-label>
+        <input matInput type="number" formControlName="discount" />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <button
+      type="submit"
+      class="base-save-button"
+      [class.button-disabled]="isLoading"
+      mat-button
+    >
+      Save
+    </button>
+  </div>
+</form>

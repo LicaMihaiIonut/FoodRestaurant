@@ -1,0 +1,18 @@
+.line {
+  border-bottom: 1px solid #deddd9;
+  margin-bottom: 20px;
+}
+
+.close-button {
+  margin-left: auto;
+  font-size: 20px;
+}
+
+.close-button:hover {
+  border-radius: 50%;
+  height: fit-content;
+}
+
+mat-form-field {
+  width: 100%;
+}

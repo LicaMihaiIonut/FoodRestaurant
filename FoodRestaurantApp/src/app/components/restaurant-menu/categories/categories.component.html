@@ -1,0 +1,65 @@
+<div class="categories-container">
+  <div class="operations">
+    <div class="d-flex me-auto">
+      <app-custom-button
+        [icon]="'bi bi-plus-circle'"
+        [text]="'Add'"
+        (click)="add()"
+      ></app-custom-button>
+      <div
+        class="operations-button"
+        [class.pagination-arrow-disabled]="!canRemove()"
+        [class.button-disabled]="!canRemove()"
+        (click)="remove()"
+      >
+        <i class="bi bi-trash"></i>
+        <span>Delete</span>
+      </div>
+    </div>
+    <app-view-management
+      [nrOfRecords]="nrOfRecords"
+      (viewManagementChanged)="viewManagementChanged($event)"
+    ></app-view-management>
+  </div>
+
+  <div class="categories-table">
+    <div class="categories-header">
+      <span class="multi-select-container">
+        <input
+          type="checkbox"
+          class="multi-select-checkbox"
+          [(ngModel)]="selectAllCheckbox"
+          (click)="selectAll()"
+        />
+      </span>
+      <span class="first-row">Category</span>
+      <div>Available</div>
+      <div>Products</div>
+      <span class="actions-container"></span>
+    </div>
+    <div *ngFor="let category of categories">
+      <div class="categories-data" [class.row-active]="category.isSelected">
+        <span class="multi-select-container">
+          <input
+            type="checkbox"
+            class="multi-select-checkbox"
+            [(ngModel)]="category.isSelected"
+          />
+        </span>
+        <span class="first-row">{{ category.name }}</span>
+        <div>
+          <input type="checkbox" [(ngModel)]="category.isAvailable" disabled />
+        </div>
+        <div>{{ category.numberOfProducts }}</div>
+        <span class="actions-container">
+          <app-custom-button
+            [icon]="'bi bi-pencil-square'"
+            [text]="'Edit'"
+            (click)="edit(category.categoryId)"
+          ></app-custom-button>
+        </span>
+      </div>
+      <div class="line" [class.row-active]="category.isSelected"></div>
+    </div>
+  </div>
+</div>

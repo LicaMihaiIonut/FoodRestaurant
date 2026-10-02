@@ -1,0 +1,46 @@
+<div class="reviews-container">
+  <div class="operations">
+    <div class="review-statistics">
+      <i class="fill-star bi-star-fill me-1"></i>
+      <span class="me-1">
+        {{ statistics.averageGrade }}
+      </span>
+      <span class="total-review-number"
+        >({{ statistics.totalReviewNumber }})</span
+      >
+    </div>
+    <app-view-management
+      [nrOfRecords]="nrOfRecords"
+      (viewManagementChanged)="viewManagementChanged($event)"
+    ></app-view-management>
+  </div>
+
+  <div class="reviews-table">
+    <div class="reviews-header">
+      <span>Customer</span>
+      <div>Grade</div>
+      <div>Description</div>
+      <div>Date</div>
+    </div>
+    <div *ngFor="let review of reviews">
+      <div class="reviews-data">
+        <span>{{ review.userName }}</span>
+
+        <div>
+          <i
+            *ngFor="let j of [].constructor(5); let col = index"
+            class="bi me-1"
+            [class.fill-star]="canFillStar(review.grade, col)"
+            [class.bi-star-fill]="canFillStar(review.grade, col)"
+            [class.bi-star]="!canFillStar(review.grade, col)"
+          ></i>
+        </div>
+        <div class="review-description" (click)="openReviewPopup(review)">
+          {{ getDescriptionPreview(review.description) }}
+        </div>
+        <div>{{ getDate(review.postedOn) }}</div>
+      </div>
+      <div class="line"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+.container {
+  padding: 30px 25px;
+}
+
+.card-info {
+  width: 100%;
+  padding: 20px 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-sizing: border-box;
+  box-shadow: 2px 5px 10px #ccc;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 35px;
+  color: #4f5057;
+  font-weight: 600;
+}
+
+.container-password {
+  width: 100%;
+  padding: 20px 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-sizing: border-box;
+  box-shadow: 2px 5px 10px #ccc;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.password-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.password-field span {
+  font-size: 14px;
+  width: 250px;
+  color: #6c6d74;
+  font-weight: 600;
+}
+
+.password-field mat-form-field {
+  width: 30%;
+}

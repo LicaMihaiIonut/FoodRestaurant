@@ -1,0 +1,50 @@
+<form [formGroup]="form" (ngSubmit)="login()">
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-card-header">
+        <div class="login-card-welcome">Welcome!</div>
+        <div class="login-card-go-to-link">
+          <div class="me-1">Don't you have an account?</div>
+          <span (click)="goToRegister()">Register here!</span>
+        </div>
+      </div>
+
+      <div class="login-card-form-control">
+        <mat-form-field>
+          <label class="login-card-label">Your email address</label>
+          <input matInput class="login-card-input" formControlName="email" />
+          <mat-error *ngIf="form.controls['email'].hasError('required')"
+            >Email is a required field.</mat-error
+          >
+          <mat-error *ngIf="form.controls['email'].hasError('email')"
+            >Invalid email format.</mat-error
+          >
+        </mat-form-field>
+      </div>
+
+      <div class="login-card-form-control">
+        <mat-form-field>
+          <label class="login-card-label">Your password</label>
+          <input
+            matInput
+            class="login-card-input"
+            formControlName="password"
+            type="password"
+          />
+          <mat-error *ngIf="form.controls['password'].hasError('required')"
+            >Password is a required field.</mat-error
+          >
+        </mat-form-field>
+      </div>
+
+      <button
+        type="submit"
+        class="base-save-button login-button"
+        [class.button-disabled]="isLoading"
+        mat-button
+      >
+        Login
+      </button>
+    </div>
+  </div>
+</form>

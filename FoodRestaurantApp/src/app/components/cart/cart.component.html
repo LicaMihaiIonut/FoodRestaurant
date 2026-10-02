@@ -1,0 +1,124 @@
+<app-restaurant-header></app-restaurant-header>
+
+<div class="my-container">
+  <div *ngIf="cart.products.length === 0 && !isLoading" class="no-products">
+    <i class="bi bi-basket no-products-icon"></i>
+    <div class="no-products-button" [routerLink]="['/restaurants']">
+      Start shopping
+    </div>
+  </div>
+
+  <div *ngIf="cart.products.length > 0" class="cart-overview">
+    <div class="products-overview">
+      <div *ngFor="let product of cart.products" class="product-card">
+        <div class="product-card-left">
+          <img [src]="product.image" />
+
+          <div class="product-card-left-info">
+            <div class="product-card-name">{{ product.name }}</div>
+            <div class="product-card-quantity-section">
+              <i
+                class="bi bi-dash-circle"
+                (click)="updateQuantity(product, -1)"
+              ></i>
+              <div class="product-card-quantity">{{ product.quantity }}</div>
+              <i
+                class="bi bi-plus-circle"
+                (click)="updateQuantity(product, 1)"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card-right">
+          <div style="display: flex">
+            <div *ngIf="!!product.discount" class="product-card-price">
+              {{ calculatePriceWithDiscount(product) }} LEI
+            </div>
+            <div
+              class="product-card-price"
+              [class.price-with-discount]="!!product.discount"
+            >
+              {{ calculatePrice(product) }} LEI
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary">
+      <div class="summary-overview">
+        <div class="summary-overview-title">Order summary</div>
+
+        <div class="summary-overview-products">
+          <div style="margin-right: auto; font-size: 1.3rem">Products</div>
+          <div style="color: #888992; font-weight: bold">
+            {{ calculateProductsTotalPrice() }} LEI
+          </div>
+        </div>
+
+        <div class="summary-overview-products">
+          <div style="margin-right: auto; font-size: 1.3rem">Transport</div>
+          <div style="color: #888992; font-weight: bold">
+            {{ getTransport() }} LEI
+          </div>
+        </div>
+
+        <div class="summary-overview-products" style="border-bottom: 0px">
+          <div style="margin-right: auto; font-size: 1.3rem; font-weight: bold">
+            Total
+          </div>
+          <div style="color: #888992; font-weight: bold">
+            {{ calculateTotalPrice() }} LEI
+          </div>
+        </div>
+      </div>
+
+      <div class="payment">
+        <div style="margin-bottom: 1.4rem">
+          <div class="payment-title">
+            This is the address where your order will be delivered.
+          </div>
+
+          <mat-select
+            [(value)]="selectedAddressId"
+            class="payment-dropdown"
+            [class.invalid-selection]="selectedAddressId === -1"
+            [class.valid-selection]="selectedAddressId !== -1"
+          >
+            <mat-option [value]="-1" selected>Select an address</mat-option>
+            <mat-option
+              *ngFor="let address of addresses"
+              [value]="address.userAddressId"
+              >{{ address.address }}, Str. {{ address.street }},
+              {{ address.city }}</mat-option
+            >
+          </mat-select>
+        </div>
+
+        <div>
+          <div class="payment-title">
+            This is the card from where your payment of the order will be
+            deducted.
+          </div>
+
+          <mat-select
+            [(value)]="selectedCardId"
+            class="payment-dropdown"
+            [class.invalid-selection]="selectedCardId === -1"
+            [class.valid-selection]="selectedCardId !== -1"
+          >
+            <mat-option [value]="-1" selected>Select a card</mat-option>
+            <mat-option *ngFor="let card of cards" [value]="card.userCardId">
+              {{ card.owner }} - {{ card.cardNumber }}
+            </mat-option>
+          </mat-select>
+        </div>
+      </div>
+
+      <div class="no-products-button" (click)="placeOrder()">
+        Finalize order
+      </div>
+    </div>
+  </div>
+</div>

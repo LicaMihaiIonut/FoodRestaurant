@@ -1,0 +1,114 @@
+.calendar-container {
+  margin: 30px;
+}
+
+.calendar-selector-container {
+  display: flex;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.calendar-selector-placeholder {
+  width: 5.5%;
+}
+
+.calendar-selector {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #deddd9;
+  padding: 5px 0px;
+  width: 100%;
+}
+
+.calendar-selector span {
+  width: 200px;
+  text-align: center;
+}
+
+.calendar-selector i {
+  cursor: pointer;
+}
+
+.calendar-selector i:hover {
+  color: #673ab7;
+}
+
+.calendar-header {
+  display: flex;
+  width: 100%;
+}
+
+.calendar-header .calendar-header-day {
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #deddd9;
+  flex-grow: 1;
+  flex-basis: 0;
+  flex-shrink: 0;
+}
+
+.calendar-data {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.calendar-week {
+  width: 5.5% !important;
+  border: 1px solid #deddd9;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-days {
+  display: flex;
+}
+
+.calendar-days div {
+  width: 100%;
+}
+
+.calendar-day-cell {
+  border: 1px solid #deddd9;
+  height: 75px;
+  flex-grow: 1;
+  flex-basis: 0;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.calendar-day-cell:hover,
+.calendar-day-cell:hover .free-day-icon {
+  background-color: #673ab7;
+  color: white;
+}
+
+.calendar-day-cell-disabled {
+  background-color: #f5f4f2;
+  pointer-events: none;
+}
+
+.calendar-day-cell-value {
+  font-size: 18px;
+  padding-left: 10px;
+  padding-top: 7px;
+  height: 50%;
+}
+
+.free-day-icon {
+  color: blue;
+}
+
+.calendar-day-cell-program {
+  font-size: 10px;
+  height: 50%;
+  padding-bottom: 7px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: end;
+}

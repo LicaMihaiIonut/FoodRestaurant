@@ -1,0 +1,84 @@
+.restaurants-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 7%;
+  border-bottom: 1px solid #d4cfcf;
+}
+.search-container {
+  background-color: #e1e1e5;
+  width: 25rem;
+  padding: 5px 10px;
+  border-radius: 26px;
+}
+
+.search-container:has(input:focus) {
+  background-color: #673ab7;
+  color: white;
+}
+
+.search-input {
+  background: #e1e1e5;
+  border: none;
+}
+
+.search-input:focus::placeholder {
+  color: white;
+}
+
+.search-input:focus {
+  outline: none;
+  background-color: #673ab7;
+  color: white;
+}
+
+.my-account {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+  cursor: pointer;
+  color: #888992;
+  font-weight: 500;
+}
+
+.my-account:hover {
+  color: #673ab7;
+}
+
+.my-account i {
+  font-size: 26px;
+  margin-right: 10px;
+}
+
+.my-cart {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #888992;
+  font-weight: 500;
+}
+
+.my-cart:hover {
+  color: #673ab7;
+}
+
+.my-cart i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.arrow-back {
+  font-size: 1.6rem;
+  margin-right: 1.4rem;
+  color: #9167e6;
+  cursor: pointer;
+}
+
+.cart-count {
+  font-size: 12px;
+  color: white;
+  background-color: #9167e6;
+  padding: 2px 7px;
+  border-radius: 50%;
+  margin-left: 3px;
+}

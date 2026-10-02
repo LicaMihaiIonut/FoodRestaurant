@@ -1,0 +1,23 @@
+<div class="my-container">
+  <div class="my-container-tabs">
+    <div
+      class="my-container-tab"
+      (click)="setTabActive('Profile')"
+      [class.tab-active]="isTabActive('Profile')"
+    >
+      Profile
+    </div>
+    <div
+      class="my-container-tab"
+      (click)="setTabActive('Reviews')"
+      [class.tab-active]="isTabActive('Reviews')"
+    >
+      Reviews
+    </div>
+  </div>
+
+  <div style="height: 100%">
+    <app-profile *ngIf="isTabActive('Profile')"></app-profile>
+    <app-reviews *ngIf="isTabActive('Reviews')"></app-reviews>
+  </div>
+</div>

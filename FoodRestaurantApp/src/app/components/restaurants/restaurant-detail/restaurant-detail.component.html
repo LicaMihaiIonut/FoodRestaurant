@@ -1,0 +1,88 @@
+<div style="scroll-padding-top: 500px">
+  <div [class.navbar-sticky]="stickyNavbar">
+    <app-restaurant-header></app-restaurant-header>
+
+    <div class="categories-line my-flex">
+      <div>
+        <i
+          class="bi bi-arrow-left-circle me-5 arrow-icon"
+          (click)="scrollBy(test, -40)"
+        ></i>
+      </div>
+      <div class="my-flex categories-names" #test>
+        <div
+          *ngFor="let category of restaurant.categories"
+          (click)="selectCategory(category.categoryId)"
+          [class.active-category]="isActive(category.categoryId)"
+        >
+          {{ category.name }}
+        </div>
+      </div>
+      <div>
+        <i
+          class="bi bi-arrow-right-circle ms-5 arrow-icon"
+          (click)="scrollBy(test, 40)"
+        ></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="my-container">
+    <div
+      *ngFor="let category of restaurant.categories"
+      attr.id="category-{{ category.categoryId }}"
+    >
+      <div style="color: #4f5057; font-size: 1.5rem; margin: 1rem 0rem">
+        {{ category.name }}
+      </div>
+
+      <div class="d-flex menu-container">
+        <div
+          *ngFor="let service of category.menu"
+          class="menu-card"
+          (mouseover)="onMouseOver(service.restaurantMenuId)"
+          (mouseout)="onMouseOver(-1)"
+          (click)="addToCart(service.restaurantMenuId)"
+        >
+          <div class="menu-card-left-side">
+            <div class="menu-card-title">
+              {{ service.name }}
+            </div>
+            <div class="menu-card-description">
+              
+              <!--Langos Oltenesc 300g, smantana 100g, dulceata afine 100g -->
+              
+            </div>
+            <div class="my-flex">
+              <div
+                *ngIf="hasDiscount(service)"
+                style="color: red; margin-right: 1rem"
+              >
+                {{ calculateDiscount(service) }} Lei
+              </div>
+
+              <div
+                class="menu-card-price"
+                [class.strike-through]="hasDiscount(service)"
+              >
+                {{ service.price }} Lei
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card-right-side">
+            <div style="overflow: hidden">
+              <img
+                [src]="service.image"
+                class="menu-card-image"
+                [class.menu-card-image-hover]="
+                  isMenuActive(service.restaurantMenuId)
+                "
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

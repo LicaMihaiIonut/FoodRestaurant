@@ -1,0 +1,35 @@
+<div class="pagination">
+  <div class="me-3">
+    <mat-form-field>
+      <mat-label>Search</mat-label>
+      <input matInput [(ngModel)]="searchText" (keyup.enter)="search()" />
+      <i class="bi bi-search" matSuffix (click)="search()"></i>
+    </mat-form-field>
+  </div>
+  <a
+    (click)="paginationFirst()"
+    [class.pagination-arrow-disabled]="!canPaginationFirst()"
+  >
+    <span><</span>
+    <span style="margin-left: -5px"><</span>
+  </a>
+  <a
+    (click)="paginationPrevious()"
+    [class.pagination-arrow-disabled]="!canPaginationPrevious()"
+  >
+    <span><</span>
+  </a>
+  <span>{{ currentPage }} / {{ nrOfPages }}</span>
+  <a
+    (click)="paginationNext()"
+    [class.pagination-arrow-disabled]="!canPaginationNext()"
+    >></a
+  >
+  <a
+    (click)="paginationLast()"
+    [class.pagination-arrow-disabled]="!canPaginationLast()"
+  >
+    <span>></span>
+    <span style="margin-left: -5px">></span>
+  </a>
+</div>

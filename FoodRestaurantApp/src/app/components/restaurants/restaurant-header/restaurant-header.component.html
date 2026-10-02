@@ -1,0 +1,30 @@
+<div class="restaurants-header">
+  <div style="display: flex; align-items: center">
+    <i class="bi bi-arrow-left-circle arrow-back" (click)="goBack()"></i>
+    <div>Back</div>
+  </div>
+
+  <div class="search-container">
+    <i class="bi bi-search me-3" matPrefix (click)="search()"></i>
+    <input
+      [(ngModel)]="searchText"
+      (keyup)="search()"
+      class="search-input"
+      placeholder="Search for restaurants..."
+    />
+  </div>
+
+  <div class="d-flex">
+    <div class="my-account" [routerLink]="['/user-account']">
+      <i class="bi bi-person-fill"></i>
+      <div>My account</div>
+    </div>
+    <div class="my-cart" [routerLink]="['/cart']">
+      <i class="bi bi-basket-fill"></i>
+      <div>Cart</div>
+      <div class="cart-count" *ngIf="CartCount > 0">
+        {{ CartCount }}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+<div class="d-flex">
+  <div class="menu">
+    <div class="menu-items">
+      <div (click)="goBack()">
+        <i class="bi bi-arrow-left-circle arrow-back"></i>
+      </div>
+      <div
+        (click)="setMenuItemActive('Security')"
+        [class.menu-item-active]="isMenuItemActive('Security')"
+      >
+        <i class="bi bi-shield-fill-check"></i>
+        <span>Security</span>
+      </div>
+      <div
+        (click)="setMenuItemActive('Account')"
+        [class.menu-item-active]="isMenuItemActive('Account')"
+      >
+        <i class="bi bi-person-fill"></i>
+        <span>Account</span>
+      </div>
+      <div
+        (click)="setMenuItemActive('Cards')"
+        [class.menu-item-active]="isMenuItemActive('Cards')"
+      >
+        <i class="bi bi-credit-card-fill"></i>
+        <span>Cards</span>
+      </div>
+      <div
+        (click)="setMenuItemActive('Addresses')"
+        [class.menu-item-active]="isMenuItemActive('Addresses')"
+      >
+        <i class="bi bi-house-door-fill"></i>
+        <span>Addresses</span>
+      </div>
+      <div
+        (click)="setMenuItemActive('Orders')"
+        [class.menu-item-active]="isMenuItemActive('Orders')"
+      >
+        <i class="bi bi-cart-check-fill"></i>
+        <span>Orders</span>
+      </div>
+    </div>
+    <div class="menu-item-logout" (click)="logout()">
+      <i class="bi bi-door-open-fill"></i>
+      <span>Logout</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div *ngIf="isMenuItemActive('Security')">
+      <app-user-security></app-user-security>
+    </div>
+
+    <div *ngIf="isMenuItemActive('Account')">
+      <app-user-account-details></app-user-account-details>
+    </div>
+
+    <div *ngIf="isMenuItemActive('Cards')">
+      <app-user-cards></app-user-cards>
+    </div>
+
+    <div *ngIf="isMenuItemActive('Addresses')">
+      <app-user-addresses></app-user-addresses>
+    </div>
+
+    <div *ngIf="isMenuItemActive('Orders')">
+      <app-user-orders></app-user-orders>
+    </div>
+  </div>
+</div>

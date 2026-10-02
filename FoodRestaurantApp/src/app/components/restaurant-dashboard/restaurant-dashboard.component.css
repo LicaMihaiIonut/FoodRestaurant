@@ -1,0 +1,41 @@
+.dashboard-container {
+  padding: 25px 40px;
+}
+
+.dashboard-header {
+  display: flex;
+  padding-bottom: 5px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid gray;
+}
+
+.dashboard-header-title {
+  margin-right: auto;
+  font-weight: 500;
+}
+
+.dashboard-header-filter {
+  font-size: 14px;
+  font-weight: 300;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.dashboard-header-filter:hover {
+  font-weight: 600;
+}
+
+.dashboard-header-filter-active {
+  font-weight: 600;
+}
+
+.dashboard-card-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.dashboard-card {
+  width: 23%;
+}

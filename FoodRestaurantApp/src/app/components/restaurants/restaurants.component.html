@@ -1,0 +1,49 @@
+<app-restaurant-header (someEvent)="filterRestaurants($event)"></app-restaurant-header> 
+<div class="restaurants-data">
+  <div
+    [routerLink]="['/restaurant', restaurant.restaurantId]"
+    *ngFor="let restaurant of restaurants; let row = index"
+    class="restaurant"
+  >
+    <div class="tesa">
+      <img
+        [src]="restaurant.image ?? 'assets/default-person-image.jpg'"
+        class="restaurant-image"
+        [class.restaurant-image-closed]="closed(restaurant.schedule)"
+      />
+      <div class="closed-today" *ngIf="closed(restaurant.schedule)">
+        Closed today
+      </div>
+    </div>
+    <div style="padding: 5px 7px 0 7px; display: flex">
+      <div style="margin-right: auto">
+        <div
+          style="
+            font-weight: 600;
+            color: #4f5057;
+            font-family: PT Sans Pro;
+            font-size: 18px;
+          "
+        >
+          {{ restaurant.name }}
+        </div>
+        <div style="font-size: 13px; color: #888992; display: flex">
+          <i class="bi bi-clock me-1"></i>
+          <span style="font-weight: 600">{{ restaurant.delivery }} min</span>
+          <i class="bi bi-bicycle ms-3 me-1"></i>
+          <span>{{ restaurant.transport }} lei</span>
+        </div>
+      </div>
+
+      <div class="review-statistics">
+        <i class="fill-star bi-star-fill me-1"></i>
+        <span class="me-1">
+          {{ restaurant.averageGrade }}
+        </span>
+        <span class="total-review-number"
+          >({{ restaurant.totalReviewNumber }})</span
+        >
+      </div>
+    </div>
+  </div>
+</div>

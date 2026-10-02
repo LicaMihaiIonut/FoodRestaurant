@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.base-button {
+  cursor: pointer;
+  color: #673ab7;
+}
+
+.base-button:hover {
+  color: #9167e6;
+}
+
+.base-save-button {
+  color: white;
+  background-color: #673ab7;
+  cursor: pointer;
+  border: 1px solid #673ab7 !important;
+  border-radius: 5px;
+  padding: 4px 12px;
+  margin: 0px;
+}
+
+.base-save-button:hover {
+  background-color: #9167e6;
+  border: 1px solid #9167e6 !important;
+  color: white;
+}
+
+.snackbar-error {
+  background-color: red;
+  color: white;
+  white-space: pre-wrap;
+}
+
+.snackbar-success {
+  background-color: #30d140;
+  color: white;
+  white-space: pre-wrap;
+}
+
+.button-disabled {
+  pointer-events: none;
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.operations-button {
+  cursor: pointer;
+  color: #9167e6;
+  border: 1px solid #9167e6;
+  border-radius: 5px;
+  padding: 3px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.operations-button:hover {
+  color: white;
+  background-color: #9167e6;
+}

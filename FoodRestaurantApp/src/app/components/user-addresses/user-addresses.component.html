@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="address-info">
+    <div class="address-info-message">
+      Here you add and manage your addresses.
+    </div>
+    <div class="address-info-add-button" (click)="add()">
+      <i class="bi bi-plus-circle-fill me-2"></i>
+    </div>
+  </div>
+
+  <div class="address-container">
+    <div *ngFor="let address of addresses" class="address-class">
+      <div class="address-information">
+        <i class="bi bi-house-check address-icon"></i>
+
+        <div class="address-number">
+          {{ address.address }}, Str. {{ address.street }}, {{ address.city }}
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center">
+        <i
+          class="bi bi-pencil-square address-delete me-2"
+          (click)="edit(address)"
+        ></i>
+        <i
+          class="bi bi-trash address-delete"
+          (click)="delete(address.userAddressId)"
+        ></i>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="d-flex mb-2">
+  <h6>Delete</h6>
+  <i class="bi bi-x close-button base-button" (click)="close(false)"></i>
+</div>
+
+<div>{{ getMessage() }}</div>
+
+<div mat-dialog-actions class="d-flex" style="justify-content: center">
+  <button class="base-save-button me-2" (click)="close(true)" mat-button>
+    Yes
+  </button>
+  <button class="no-button" (click)="close(false)" mat-button>No</button>
+</div>
